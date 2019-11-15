@@ -1,4 +1,6 @@
-<%= form_with(model: session, local: true) do |form| %>
+
+<%= render 'shared/errors' %>
+<%= form_with(model: session,url: login_url, local: true) do |form| %>
   <% if session.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
