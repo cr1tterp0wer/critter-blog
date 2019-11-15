@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sessions
   root "static#home"
 
   resource :contact_message, only: [:create, :destroy]
