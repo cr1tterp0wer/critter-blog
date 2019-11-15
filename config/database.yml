@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: critter-blog_production
-  username: critter-blog
-  password: <%= ENV['CRITTER-BLOG_DATABASE_PASSWORD'] %>
+  database: <%= ENV['PG_DATABASE'] %>
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
