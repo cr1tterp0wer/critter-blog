@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize, only: [:new,:create]
 
   # GET /sessions/new
   def new
     @session = Session.new
+    redirect_to "/" if is_logged?
   end
 
   # POST /sessions
@@ -12,27 +14,11 @@ class SessionsController < ApplicationController
     @session = Session.new
 
     if( user.try( :authenticate, session_params[:password] ) )
-      @session.ensure_session_token
-      puts @session.session_token
-      user.session = @session
-    end
-
-    if @session.save
-      session[:session_token] = @session.session_token
+      login!(user)
       redirect_to "/"
     else
-      Session.errors = "Invalid Username/Password"
-    end
-  end
-
-
-  # DELETE /sessions/1
-  # DELETE /sessions/1.json
-  def destroy
-    @session.destroy
-    respond_to do |format|
-      format.html { redirect_to sessions_url, notice: 'Session was successfully destroyed.' }
-      format.json { head :no_content }
+      flash[:errors] = ["Invalid Username/Password"]
+      render :new
     end
   end
 
