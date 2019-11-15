@@ -4,4 +4,7 @@ class StaticController < ApplicationController
     render params[:url]
   end
 
+  def home
+    @contact_message = ContactMessage.new
+  end
 end
