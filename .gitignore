@@ -68,7 +68,8 @@ yarn-debug.log*
 
 *.swp
 .swp
-
+.swo
+*.swo
 
 
 

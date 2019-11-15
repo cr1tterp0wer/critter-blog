@@ -37,9 +37,27 @@ h3 {
   font-size: 2rem;
 }
 
+*:focus {
+    outline: none;
+} 
+
+textarea,
+input{
+  display:block;
+  border: 1px solid $secondary;
+  border-radius:10px;
+  padding:10px;
+  margin-bottom:10px;
+  &:focus{ outline:none; }
+}
+
 p.lead {
   font-size: 1.15rem;
   font-weight: 400;
+}
+
+.btn-large{
+  font-size:1.5rem;
 }
 
 .subheading {
@@ -61,6 +79,7 @@ p.lead {
     font-size: 1.5rem;
     line-height: 3.5rem;
     margin-right: 1rem;
+    transition: 200ms ease-in-out;
     &:last-child {
       margin-right: 0;
     }
@@ -76,5 +95,15 @@ p.lead {
     &:hover {
       color: $primary;
     }
+  }
+}
+
+.bg-primary-gradient{
+  background: linear-gradient(-90deg, #c51221, $primary);
+}
+
+#contact{
+  h2{
+    color:$white;
   }
 }
