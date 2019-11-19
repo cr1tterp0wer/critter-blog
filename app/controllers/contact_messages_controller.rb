@@ -1,5 +1,9 @@
 class ContactMessagesController < ApplicationController
     
+  def index
+    @contact_messages = ContactMessage.all
+  end
+
   def create
     @contact_message = ContactMessage.new(contact_message_params)
 

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages</h1>
+
+<table class="table table-responsive">
+  <thead>
+      <tr>
+        <td>ID</td>
+        <td>TITLE</td>
+        <td>EMAIL</td>
+        <td>MESSAGE</td>
+        <td>DATE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @constact_messages.each do |m| %>
+
+      <tr>
+        <td><%= m.id %></td>
+        <td><%= m.title %></td>
+        <td><%= m.email %></td>
+        <td><%= m.mesage %></td>
+        <td><%= m.created_at %></td>
+        <td><%= link_to 'Show', m %></td>
+        <td><%= link_to 'Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

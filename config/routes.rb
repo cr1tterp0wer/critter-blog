@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "static#home"
 
-  resource :contact_message, only: [:create, :destroy]
+  resource :contact_messages, only: [:index, :create, :destroy]
   resources :users
   resources :posts
 
