@@ -1,9 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/header' %>
+<div id="post">
+  <section class="resume-section p-3 p-lg-5" id="post-content">
+    <p id="notice"><%= notice %></p>
+    <div class="title">
+      <h2 id="post-title" class="font-weight-bold">
+        <%= @post.title %>
+      </h2>
+    </div>
 
-<%= image_tag @post.cover_picture %>
-<%= @post.title %>
-<%= @post.body %>
+    <div class="cover-picture">
+      <%= image_tag @post.cover_picture, id: "cover-picture" %>
+    </div>
 
+    <div class="body">
+      <p id="post-body">
+      <%= @post.body %>
+      </p>
+    </div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+    <% if is_logged? %>
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+    <% end %>
+    <%= link_to 'Back', posts_path %>
+  </section>
+
+  <%=render 'shared/contact-form' %>
+</div>
+

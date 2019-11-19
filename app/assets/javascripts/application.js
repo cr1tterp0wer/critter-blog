@@ -16,6 +16,5 @@
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require resume
 //= require_tree .

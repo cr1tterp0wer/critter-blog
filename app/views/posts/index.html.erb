@@ -2,31 +2,17 @@
 
 <h1>Posts</h1>
 
-<table class="table table-responsive">
-  <thead>
-      <tr>
-        <td>ID</td>
-        <td>TITLE</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-  </thead>
-
-  <tbody>
+<ul>
+  <li>
     <% @posts.each do |post| %>
-
-      <tr>
-        <td><%= post.id %></td>
-        <td><%= post.title %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div><%= post.id %></td>
+        <div><%= post.title %></td>
+        <div><%= link_to 'Show', post %></td>
+        <div><%= link_to 'Edit', edit_post_path(post) %></td>
+        <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
-  </tbody>
-</table>
-
+  </li>
+</ul>
 <br>
 
 <%= link_to 'New Post', new_post_path %>
