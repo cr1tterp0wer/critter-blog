@@ -48,7 +48,13 @@ input{
   border-radius:10px;
   padding:10px;
   margin-bottom:10px;
+  max-width:100%;
+
   &:focus{ outline:none; }
+}
+
+ul{
+  list-style:none;
 }
 
 p.lead {

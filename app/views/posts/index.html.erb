@@ -1,18 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/header' %>
+<section class="blog-header resume-section p-3 p-lg-5">
+  <%= image_tag "logo-2.svg" %>
+</section>
 
-<h1>Posts</h1>
+<hr class="m-0">
 
-<ul>
-  <li>
-    <% @posts.each do |post| %>
-        <div><%= post.id %></td>
-        <div><%= post.title %></td>
-        <div><%= link_to 'Show', post %></td>
-        <div><%= link_to 'Edit', edit_post_path(post) %></td>
-        <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<div id="posts">
+  <section class="resume-section p-3 p-lg-5" id="post-content">
+    <p id="notice"><%= notice %></p>
+
+    <ul id="posts-list">
+        <% @posts.each do |post| %>
+          <li>
+            <%= link_to post do %>
+              <div><%= image_tag post.cover_picture, class: "cover-picture trailer"%></div>
+              <div>
+                <p class="p-2 title font-weight-bold"><%= post.title %></p>
+              </div>
+            <% end %>
+
+            <% if is_logged? %>
+              <div><%= link_to 'Edit', edit_post_path(post) %></div>
+              <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            <% end %>
+            <hr class="m-0">
+          </li>
+        <% end %>
+    </ul>
+    <br>
+
+    <% if is_logged? %>
+      <%= link_to 'New Post', new_post_path %>
     <% end %>
-  </li>
-</ul>
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+  </section>
+  <%=render 'shared/contact-form' %>
+</div>
