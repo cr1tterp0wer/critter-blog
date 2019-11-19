@@ -1,5 +1,6 @@
 class ContactMessagesController < ApplicationController
-    
+  skip_before_action :authorize, only: [:create]
+
   def index
     @contact_messages = ContactMessage.all
   end
@@ -9,9 +10,9 @@ class ContactMessagesController < ApplicationController
 
     respond_to do |format|
       if @contact_message.save
-        format.html { redirect_to "/", notice: 'Message was successfully posted!' }
+        format.html { redirect_to root_url, notice: 'Message was successfully posted!' }
       else
-        format.html { redirect_to "/" }
+        format.html { redirect_to root_url }
         format.json { render json: @contact_message.errors, status: :unprocessable_entity }
       end
     end
