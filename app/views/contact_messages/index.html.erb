@@ -6,26 +6,24 @@
   <thead>
       <tr>
         <td>ID</td>
-        <td>TITLE</td>
+        <td>FULL NAME</td>
         <td>EMAIL</td>
         <td>MESSAGE</td>
         <td>DATE</td>
-        <td></td>
         <td></td>
         <td></td>
       </tr>
   </thead>
 
   <tbody>
-    <% @constact_messages.each do |m| %>
+    <% @contact_messages.each do |m| %>
 
       <tr>
         <td><%= m.id %></td>
-        <td><%= m.title %></td>
+        <td><%= m.name%></td>
         <td><%= m.email %></td>
-        <td><%= m.mesage %></td>
+        <td><%= m.message %></td>
         <td><%= m.created_at %></td>
-        <td><%= link_to 'Show', m %></td>
         <td><%= link_to 'Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

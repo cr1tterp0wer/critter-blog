@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize, only: [:index,:show]
 
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
+    @contact_message = ContactMessage.new
   end
 
   # GET /posts/1
