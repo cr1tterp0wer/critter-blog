@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   # GET /sessions/new
   def new
     @session = Session.new
-    redirect_to "/" if is_logged?
+    redirect_to root_url if is_logged?
   end
 
   # POST /sessions
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
     if( user.try( :authenticate, session_params[:password] ) )
       login!(user)
-      redirect_to "/"
+      redirect_to root_url
     else
       flash[:errors] = ["Invalid Username/Password"]
       render :new
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   
   def logout 
     logout!( current_user )
-    redirect_to "/"
+    redirect_to root_url
   end
 
   private
