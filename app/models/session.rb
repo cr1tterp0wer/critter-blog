@@ -33,7 +33,6 @@ class Session < ApplicationRecord
 
   def self.sign_out_user( user_id )
     Session.where( user_id: user_id ).destroy_all
-    session[:session_token] = nil
   end
 
   def self.get_user_by_token( token )

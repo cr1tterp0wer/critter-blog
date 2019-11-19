@@ -10,7 +10,6 @@ class ContactMessagesController < ApplicationController
     respond_to do |format|
       if @contact_message.save
         format.html { redirect_to "/", notice: 'Message was successfully posted!' }
-        format.json { render :show, status: :created, location: "static#home" }
       else
         format.html { redirect_to "/" }
         format.json { render json: @contact_message.errors, status: :unprocessable_entity }

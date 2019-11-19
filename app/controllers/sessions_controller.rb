@@ -21,10 +21,15 @@ class SessionsController < ApplicationController
       render :new
     end
   end
+  
+  def logout 
+    logout!( current_user )
+    redirect_to "/"
+  end
 
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.require(:session).permit(:username, :password)
+      params.require(:session).permit(:id, :username, :password)
     end
 end
