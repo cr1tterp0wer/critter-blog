@@ -5,33 +5,36 @@
 
 <hr class="m-0">
 
-<div id="posts">
-  <section class="resume-section p-3 p-lg-5" id="post-content">
-    <p id="notice"><%= notice %></p>
+<% unless @posts.empty? %>
+  <div id="posts">
+    <section class="resume-section p-3 p-lg-5" id="post-content">
+      <p id="notice"><%= notice %></p>
 
-    <ul id="posts-list">
-        <% @posts.each do |post| %>
-          <li>
-            <%= link_to post do %>
-              <div><%= image_tag post.cover_picture, class: "cover-picture trailer"%></div>
-              <div>
-                <p class="p-2 title font-weight-bold"><%= post.title %></p>
-              </div>
-            <% end %>
+      <ul id="posts-list">
+          <% @posts.each do |post| %>
+            <li>
+              <%= link_to post do %>
+                <div><%= image_tag post.cover_picture, class: "cover-picture trailer"%></div>
+                <div>
+                  <p class="p-2 title font-weight-bold"><%= post.title %></p>
+                </div>
+              <% end %>
 
-            <% if is_logged? %>
-              <div><%= link_to 'Edit', edit_post_path(post) %></div>
-              <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-            <% end %>
-            <hr class="m-0">
-          </li>
-        <% end %>
-    </ul>
-    <br>
+              <% if is_logged? %>
+                <div><%= link_to 'Edit', edit_post_path(post) %></div>
+                <div><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+              <% end %>
+              <hr class="m-0">
+            </li>
+          <% end %>
+      </ul>
+      <br>
 
-    <% if is_logged? %>
-      <%= link_to 'New Post', new_post_path %>
-    <% end %>
-  </section>
-  <%=render 'shared/contact-form' %>
+      <% if is_logged? %>
+        <%= link_to 'New Post', new_post_path %>
+      <% end %>
+    </section>
+  <% end %>
 </div>
+
+<%=render 'shared/contact-form' %>
