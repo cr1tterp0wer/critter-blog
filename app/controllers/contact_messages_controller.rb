@@ -19,11 +19,17 @@ class ContactMessagesController < ApplicationController
   end
 
   def destroy
+    @contact_message = ContactMessage.find(params[:id])
+    @contact_message.destroy
+    respond_to do |format|
+      format.html { redirect_to contact_messages_url, notice: 'Message was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
 
   def contact_message_params 
-    params.require(:contact_message).permit(:name, :email, :message)
+    params.require(:contact_message).permit(:id, :name, :email, :message)
   end
 end

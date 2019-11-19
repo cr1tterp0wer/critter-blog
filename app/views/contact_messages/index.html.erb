@@ -16,15 +16,14 @@
   </thead>
 
   <tbody>
-    <% @contact_messages.each do |m| %>
-
+    <% @contact_messages.each do |contact_message| %>
       <tr>
-        <td><%= m.id %></td>
-        <td><%= m.name%></td>
-        <td><%= m.email %></td>
-        <td><%= m.message %></td>
-        <td><%= m.created_at %></td>
-        <td><%= link_to 'Destroy', m, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= contact_message.id %></td>
+        <td><%= contact_message.name%></td>
+        <td><%= contact_message.email %></td>
+        <td><%= contact_message.message %></td>
+        <td><%= contact_message.created_at %></td>
+        <td><%= link_to 'Destroy', contact_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
