@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
+
   rescue_from ActionView::MissingTemplate do |exception|
     render '404'
   end
+
   helper_method :current_user, :is_logged?
   before_action :authorize
   
