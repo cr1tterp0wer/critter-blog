@@ -1,22 +1,25 @@
+<div id="login">
 
-<%= render 'shared/errors' %>
-<%= form_with(model: session,url: login_url, local: true) do |form| %>
-  <% if session.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
+  <h1>Sign on</h1>
+  <%= render 'shared/errors' %>
+  <%= form_with(model: session,url: login_url, local: true) do |form| %>
+    <% if session.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
 
-      <ul>
-      <% session.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% session.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form.text_field :username, size: 50, placeholder: "USERNAME" %>
+    <%= form.password_field :password, size: 50, placeholder: "PASSWORD" %>
+
+    <div class="actions">
+      <%= form.submit "Submit",class: "btn btn-primary" %>
     </div>
   <% end %>
-
-  <%= form.text_field :username, size: 50, placeholder: "USERNAME" %>
-  <%= form.password_field :password, size: 50, placeholder: "PASSWORD" %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
