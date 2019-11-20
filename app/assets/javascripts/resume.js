@@ -24,4 +24,34 @@ document.addEventListener("turbolinks:load",function(){
   $('body').scrollspy({
     target: '#sideNav'
   });
+
+  //Contact-Form Ajax callback
+  $(".contact-form").on("ajax:success", function(event){
+    let data = event.detail
+    let message = "";
+
+    $("#errors").remove();
+    $("#notice").remove();
+
+    if( data[0].status == "failure"){
+
+      data[0].message.forEach(function(e,i){
+        message += e;
+      });
+      $('<p id="errors">'+message+'</p>')
+        .insertBefore('section#contact')
+        .delay(3000).fadeOut('slow')
+    }else{
+      $('.contact-form input').val('')
+      $('.contact-form textarea').val('')
+
+      message =  "Thank you, Your Message has been sent."
+      $('<p id="notice">'+message+'<p>')
+        .insertBefore('section#contact')
+        .delay(3000).fadeOut('slow')
+    }
+  }).on("ajax:error", function(event){ 
+      alert('error')
+      $("#notice").append("<p>ERROR</p>")
+     });
 });

@@ -93,7 +93,7 @@ p.lead {
     font-size: 1.5rem;
     line-height: 3.5rem;
     margin-right: 1rem;
-    transition: 200ms ease-in-out;
+    animation: 200ms linear;
     &:last-child {
       margin-right: 0;
     }
@@ -132,8 +132,6 @@ p.lead {
     font-size:1.1rem;
   }
 }
-
-
 #login{
   max-width:450px;
   margin:0 auto;
@@ -142,7 +140,46 @@ p.lead {
     width:100%;
   }
 }
+#home-container{
+}
 
+#errors,
+#notice{
+  display:block;
+  position: fixed;
+  top: 0;
+  background: #8c9299;
+  margin: 0 auto;
+  color: #ffffff;
+  padding: 10px;
+  opacity:0;
 
+  -webkit-animation:fadeOut 10s linear;
+  -moz-animation: fadeOut 10s linear;
+  -ms-animation: fadeOut 10s linear;
+  -o-animation: fadeOut 10s linear;
+  animation: fadeOut 10s linear;
+}
 
+#errors:empty,
+#notice:empty{
+  display:none;
+}
+
+#errors{
+  background:red;
+  color:white;
+  font-weight:700;
+}
+
+@-webkit-keyframes fadeOut {
+    0% { opacity: 1;}
+    99% { opacity: 0.01;}
+    100% { opacity: 0;}
+}  
+@keyframes fadeOut {
+    0% { opacity: 1;}
+    99% { opacity: 0.01;}
+    100% { opacity: 0;}
+}
 

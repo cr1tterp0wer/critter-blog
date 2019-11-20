@@ -1,10 +1,11 @@
-<hr class="m-0">
+<p id="notice"><p>
+<p id="errors"></p>
 
 <section class="resume-section p-3 p-lg-5 d-flex align-items-center bg-primary-gradient" id="contact">
   <div class="w-100">
     <h2>Contact</h2>
 
-    <%= form_with model: @contact_message, url: contact_messages_url(@contact_message), method: "post" do |form| %>
+    <%= form_with model: @contact_message, url: contact_messages_url(@contact_message), method: "post", class: "contact-form",remote: true do |form| %>
       <%= form.text_field :name, size: 50, placeholder: "FULL NAME"  %> 
       <%= form.text_field :email, size: 50, placeholder: "EMAIL" %> 
       <%= form.text_area :message, cols:49, rows:10, placeholder: "MESSAGE"  %>
@@ -12,5 +13,3 @@
     <% end %>
   </div>
 </section>
-
-

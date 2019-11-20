@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Messages</h1>
+<div class="p-5">
+  <p id="notice"><%= notice %></p>
 
-<table class="table table-responsive">
-  <thead>
-      <tr>
-        <td>ID</td>
-        <td>FULL NAME</td>
-        <td>EMAIL</td>
-        <td>MESSAGE</td>
-        <td>DATE</td>
-        <td></td>
-        <td></td>
-      </tr>
-  </thead>
+  <h1>Messages</h1>
 
-  <tbody>
-    <% @contact_messages.each do |contact_message| %>
-      <tr>
-        <td><%= contact_message.id %></td>
-        <td><%= contact_message.name%></td>
-        <td><%= contact_message.email %></td>
-        <td><%= contact_message.message %></td>
-        <td><%= contact_message.created_at %></td>
-        <td><%= link_to 'Destroy', contact_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <table class="table table-responsive">
+    <thead>
+        <tr>
+          <td>ID</td>
+          <td>FULL NAME</td>
+          <td>EMAIL</td>
+          <td>MESSAGE</td>
+          <td>DATE</td>
+          <td></td>
+          <td></td>
+        </tr>
+    </thead>
 
+    <tbody>
+      <% @contact_messages.each do |contact_message| %>
+        <tr>
+          <td><%= contact_message.id %></td>
+          <td><%= contact_message.name%></td>
+          <td><%= contact_message.email %></td>
+          <td><%= contact_message.message %></td>
+          <td><%= contact_message.created_at %></td>
+          <td><%= link_to 'Destroy', contact_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

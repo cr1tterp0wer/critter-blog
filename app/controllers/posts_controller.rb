@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @contact_message = ContactMessage.new
   end
 
   # GET /posts/new
