@@ -16,6 +16,9 @@ body {
 html,body{
   min-height:100%;
 }
+body{
+  min-height:100vh;
+}
 
 h1,
 h2,
@@ -120,6 +123,7 @@ p.lead {
 }
 
 //RAILS
+.errors,
 #error_explanation{
   font-size: 1rem;
   color:$red;
@@ -129,9 +133,14 @@ p.lead {
   }
 }
 
+
 #login{
   max-width:450px;
   margin:0 auto;
+  min-height:100vh;
+  input.text{
+    width:100%;
+  }
 }
 
 

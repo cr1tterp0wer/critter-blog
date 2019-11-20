@@ -1,25 +1,14 @@
-<div id="login">
+<div id="login" class="p-5 bg-white d-flex flex-column">
 
-  <h1>Sign on</h1>
-  <%= render 'shared/errors' %>
+  <h1 class="mt-5 pt-5">Login</h1>
   <%= form_with(model: session,url: login_url, local: true) do |form| %>
-    <% if session.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
 
-        <ul>
-        <% session.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <%= form.text_field :username, size: 50, placeholder: "USERNAME" %>
-    <%= form.password_field :password, size: 50, placeholder: "PASSWORD" %>
-
+    <%= form.text_field :username, placeholder: "USERNAME",class: "text" %>
+    <%= form.password_field :password, placeholder: "PASSWORD", class:"text" %>
+    
+    <%= render 'shared/errors' %>
     <div class="actions">
-      <%= form.submit "Submit",class: "btn btn-primary" %>
+      <%= form.submit "Submit", class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
