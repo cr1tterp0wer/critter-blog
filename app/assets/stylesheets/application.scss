@@ -13,6 +13,14 @@
  *= require font_awesome5_webfont
  *= require_self
  */
+@import "variables.scss";
+@import "mixins.scss";
+@import "bootstrap";
+@import "global.scss";
+@import "nav.scss";
+@import "resume-item.scss";
+@import "bootstrap-overrides.scss";
+
 @import 'resume';
 @import 'static';
 @import 'posts';
