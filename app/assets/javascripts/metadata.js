@@ -45,7 +45,7 @@ document.addEventListener("turbolinks:load",function() {
     let metaData = {}
 
     if( isPostUrl() ){
-      metaData = buildMetaDataJSON();
+      //metaData = buildMetaDataJSON();
     }else{
       //Insert generic meta data
       metaData.title = "Christopher Apodaca";
@@ -55,10 +55,12 @@ document.addEventListener("turbolinks:load",function() {
                     "provide a robust synopsis for high level overviews."+
                     "Iterative approaches to corporate strategy foster " +
                     "collaborative thinking to further the overall value" +
-                    " proposition." 
+                    " proposition.";
     }
 
-    insertMetaData( metaData );
+    if( !jQuery.isEmptyObject( metaData ) ){
+      insertMetaData( metaData );
+    }
   }
 
   buildAndInsertMetaData();
