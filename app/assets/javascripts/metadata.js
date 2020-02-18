@@ -25,10 +25,10 @@ document.addEventListener("turbolinks:load",function() {
   function buildMetaDataJSON(){
     let ogData = {};
 
-    ogData.title = $("#post-title").text().trim();
+    ogData.title = $("#post-title").text().trim().replace(/"/g, "\'");
     ogData.url   = window.location.href;
     ogData.image = $('#cover-picture')[0].src;
-    ogData.description = $('#post-body').text().trim();
+    ogData.description = $('#post-body').text().trim().replace(/"/g, "\'");
 
     return ogData;
   }
