@@ -17,7 +17,7 @@ $pi-height:325px;
 
 #posts-list{
   li{
-    padding-top:10px 0;
+    padding:10px 0;
 
     .post-item{
       display: grid;
@@ -25,10 +25,6 @@ $pi-height:325px;
       grid-gap: 50px;
       max-height: $pi-height;
       overflow: hidden;
-
-      .pi-cover{
-
-      }
 
       .pi-body{
         position:relative;

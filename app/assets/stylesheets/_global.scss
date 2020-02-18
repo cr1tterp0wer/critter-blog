@@ -4,6 +4,7 @@ body {
   @include body-font;
   color: $gray-600;
 }
+
 @media (min-width: 992px) {
   body {
     main{
@@ -16,6 +17,7 @@ body {
 html,body{
   min-height:100%;
 }
+
 body{
   min-height:100vh;
 }
@@ -43,6 +45,10 @@ h2 {
 
 h3 {
   font-size: 2rem;
+}
+
+a{
+  transition: 250ms;
 }
 
 *:focus {
