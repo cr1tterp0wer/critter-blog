@@ -14,12 +14,12 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @contact_message = ContactMessage.new
-    @post = Post.find( params[:id] )
+    @show_post = Post.find( params[:id] )
   end
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @new_post = Post.new
   end
 
   # GET /posts/1/edit
