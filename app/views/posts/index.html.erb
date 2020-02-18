@@ -8,6 +8,7 @@
   <hr class="m-0">
 
   <% unless @posts.empty? %>
+
     <div id="posts">
       <section class="resume-section p-3 p-lg-5" id="post-content">
         <p id="notice"><%= notice %></p>
@@ -36,7 +37,15 @@
           <%= link_to 'New Post', new_post_path %>
         <% end %>
       </section>
+
+    <% else %>
+
+      <% if is_logged? %>
+        <%= link_to 'New Post', new_post_path %>
+      <% end %>
+
     <% end %>
+    
   </div>
 
   <%=render 'shared/contact-form' %>
