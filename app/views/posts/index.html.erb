@@ -16,12 +16,22 @@
         <ul id="posts-list">
             <% @posts.each do |post| %>
               <li>
+                  <div class="post-item">
+
+                    <div class="pi-cover">
+
                 <%= link_to post do %>
-                  <div><%= image_tag post.cover_picture, class: "cover-picture trailer"%></div>
-                  <div>
-                    <p class="p-2 title font-weight-bold"><%= post.title %></p>
-                  </div>
+                      <div><%= image_tag post.cover_picture, class: "cover-picture trailer"%></div>
+                      <div>
+                        <p class="p-2 title font-weight-bold"><%= post.title %></p>
+                      </div>
                 <% end %>
+                    </div>
+                    <div class="pi-body pt-5">
+                       <%= strip_tags( post.body ) %>
+                    </div>
+
+                  </div>
 
                 <% if is_logged? %>
                   <div><%= link_to 'Edit', edit_post_path(post) %></div>
