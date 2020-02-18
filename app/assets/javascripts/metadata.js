@@ -34,10 +34,10 @@ document.addEventListener("turbolinks:load",function() {
   }
 
   function insertMetaData( data ){
-    $('head').append('<meta property="og:title" content="'+data.title+'">');
-    $('head').append('<meta property="og:url" content="'+data.url+'">');
-    $('head').append('<meta property="og:image" content="'+data.image+'">');
-    $('head').append('<meta property="og:description" content="'+data.description+'">');
+    $('head').prepend('<meta property="og:title" content="'+data.title+'">');
+    $('head').prepend('<meta property="og:url" content="'+data.url+'">');
+    $('head').prepend('<meta property="og:image" content="'+data.image+'">');
+    $('head').prepend('<meta property="og:description" content="'+data.description+'">');
   }
 
   function buildAndInsertMetaData(){
