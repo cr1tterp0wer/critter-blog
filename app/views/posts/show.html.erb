@@ -15,7 +15,7 @@
 
       <div class="body p-4">
         <div id="post-body">
-        <%= simple_format(@post.body) %>
+        <%= simple_format(@post.body.html_safe) %>
         </div>
       </div>
 
