@@ -17,6 +17,8 @@ $pi-height:325px;
 
 #posts-list{
   li{
+    padding-top:10px 0;
+
     .post-item{
       display: grid;
       grid-template-columns: 1fr auto;
