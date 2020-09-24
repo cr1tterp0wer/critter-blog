@@ -18,3 +18,7 @@ a {
     color: darken($primary, 15%);
   }
 }
+
+a.secondary {
+	color: $success;
+}
