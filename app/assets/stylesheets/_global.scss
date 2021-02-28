@@ -63,6 +63,7 @@ input{
   padding:10px;
   margin-bottom:10px;
   max-width:100%;
+	background: white;
 
   &:focus{ outline:none; }
 }
@@ -177,6 +178,32 @@ p.lead {
   color:white;
   font-weight:700;
 }
+
+
+.blog-nav{
+  background: linear-gradient( 60deg, #6722fa 20%, #dc3545);
+  background-size:400% 400%;
+  border-right: 5px solid $primary;
+  animation: PulseColors 10s ease infinite;
+}
+
+@-webkit-keyframes PulseColors {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes PulseColors {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes PulseColors {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
 
 @-webkit-keyframes fadeOut {
     0% { opacity: 1;}
